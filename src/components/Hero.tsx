@@ -82,10 +82,8 @@ export const Hero: React.FC<HeroProps> = ({ onContactClick, onExploreClick }) =>
                 src={mePortraitLocal}
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  if (!target.src.includes('public/me.jpg')) {
+                  if (!target.src.endsWith('/me.jpg')) {
                     target.src = '/me.jpg';
-                  } else {
-                    target.src = '/assets/images/hero-portrait-placeholder.svg';
                   }
                 }}
                 alt="Rory Regentina — Senior SEO & GEO Strategist"

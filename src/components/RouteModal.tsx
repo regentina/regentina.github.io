@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, MapPin, Sparkles, Compass, CheckCircle2, ExternalLink } from 'lucide-react';
-import { TravelRoute } from '../data/portfolioData';
+import { X, MapPin, Sparkles, CheckCircle2, ExternalLink } from 'lucide-react';
+import { RouteItem } from '../data/portfolioData';
 
 interface RouteModalProps {
-  route: TravelRoute | null;
+  route: RouteItem | null;
   onClose: () => void;
 }
 
@@ -21,76 +21,77 @@ export const RouteModal: React.FC<RouteModalProps> = ({ route, onClose }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-ink/70 backdrop-blur-sm"
+          className="fixed inset-0 bg-obsidian-deep/80 backdrop-blur-md"
         />
 
-        {/* Modal Window */}
+        {/* Modal Card */}
         <motion.div
-          initial={{ scale: 0.9, opacity: 0, y: 20 }}
+          initial={{ scale: 0.92, opacity: 0, y: 20 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
-          exit={{ scale: 0.9, opacity: 0, y: 20 }}
-          transition={{ type: 'spring', bounce: 0.25 }}
-          className="relative max-w-xl w-full bg-white rounded-3xl border-3 border-ink shadow-sticker-xl p-6 sm:p-8 z-10 max-h-[90vh] overflow-y-auto"
+          exit={{ scale: 0.92, opacity: 0, y: 20 }}
+          transition={{ type: 'spring', bounce: 0.2 }}
+          className="relative max-w-2xl w-full dark-glass rounded-3xl hairline-border p-6 sm:p-8 z-10 max-h-[85vh] overflow-y-auto shadow-2xl"
         >
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-5 right-5 sticker-btn bg-canvas p-2 rounded-full text-ink hover:bg-coral hover:text-white transition-colors"
+            className="absolute top-5 right-5 p-2 rounded-full dark-glass hairline-border text-ivory hover:text-white transition-colors cursor-pointer"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
           </button>
 
-          {/* Modal Header */}
+          {/* Header */}
           <div className="flex items-center gap-2 mb-3">
-            <span className="text-3xl">{route.flag}</span>
-            <div className="sticker-pill bg-canvas text-ink text-xs font-heading font-black px-3 py-1 rounded-full border border-ink">
-              {route.location} • {route.coordinates}
-            </div>
+            <span className="text-xs font-mono text-cyan-glow uppercase tracking-wider">
+              {route.chapter}
+            </span>
+            <span className="text-ivory-dim">•</span>
+            <span className="text-xs font-mono text-amber-glow">{route.coordinates}</span>
           </div>
 
-          <h3 className="font-heading font-black text-2xl sm:text-3xl text-ink leading-tight mb-4">
+          <h3 className="font-heading font-black text-2xl sm:text-3xl text-ivory leading-tight mb-4">
             {route.title}
           </h3>
 
-          <div className="p-4 rounded-2xl bg-canvas border-2 border-ink text-sm font-medium text-ink leading-relaxed mb-6 italic">
-            “{route.storyExcerpt}”
+          <div className="p-4 rounded-2xl bg-surface-elevated hairline-border font-serif italic text-sm sm:text-base text-ivory leading-relaxed mb-6">
+            “{route.narrative}”
           </div>
 
           {/* E-E-A-T Signal Highlight */}
           <div className="mb-6">
-            <div className="flex items-center gap-1.5 text-xs font-heading font-black text-coral-dark uppercase tracking-wider mb-2">
-              <Sparkles className="w-3.5 h-3.5 text-coral" />
-              <span>Search E-E-A-T &amp; Hospitality Signal</span>
+            <div className="flex items-center gap-1.5 text-xs font-mono text-rose-glow uppercase tracking-wider mb-2">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Verified Search E-E-A-T Signal</span>
             </div>
-            <div className="p-3.5 rounded-xl bg-coral-light border border-ink/40 text-xs font-bold text-ink">
+            <div className="p-3.5 rounded-xl bg-surface-elevated hairline-border text-xs font-mono text-ivory">
               {route.eeatSignal}
             </div>
           </div>
 
           {/* Key Field Takeaways */}
           <div className="mb-8">
-            <h4 className="font-heading font-black text-sm text-ink uppercase tracking-wider mb-3">
+            <h4 className="font-heading font-bold text-xs uppercase tracking-wider text-ivory-dim mb-3">
               Field Observations &amp; Itinerary Highlights:
             </h4>
             <div className="space-y-2">
               {route.highlights.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-2.5 text-xs font-semibold text-ink">
-                  <CheckCircle2 className="w-4 h-4 text-mint-dark shrink-0 mt-0.5" />
+                <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-ivory-muted">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-glow shrink-0 mt-0.5" />
                   <span>{item}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Footer Actions */}
-          <div className="flex items-center justify-between gap-4 pt-4 border-t-2 border-ink/10 flex-wrap">
-            <span className="text-xs font-bold text-ink-muted">Published on LocallyTrip</span>
+          {/* Footer */}
+          <div className="flex items-center justify-between gap-4 pt-4 border-t border-white/5 flex-wrap">
+            <span className="text-xs font-mono text-ivory-dim">LocallyTrip Verified Itinerary</span>
             <a
               href="https://locallytrip.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="sticker-btn bg-coral hover:bg-coral-dark text-white font-heading font-black text-xs px-5 py-2.5 rounded-xl flex items-center gap-1.5"
+              className="px-5 py-2.5 rounded-xl bg-ivory text-obsidian font-heading font-black text-xs flex items-center gap-1.5 hover:bg-white transition-colors"
             >
               <span>Explore on LocallyTrip</span>
               <ExternalLink className="w-3.5 h-3.5" />

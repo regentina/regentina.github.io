@@ -1,219 +1,266 @@
-export interface TravelRoute {
+export interface RouteItem {
   id: string;
+  chapter: string;
   title: string;
   location: string;
   country: string;
-  flag: string;
-  tagline: string;
-  storyExcerpt: string;
-  eeatSignal: string;
-  color: string;
-  accentColor: string;
   coordinates: string;
+  altitude?: string;
+  tagline: string;
+  narrative: string;
+  eeatSignal: string;
+  accentGlow: 'amber' | 'cyan' | 'rose' | 'emerald';
   highlights: string[];
 }
 
 export const PORTFOLIO_DATA = {
   profile: {
     name: "Rory Regentina",
-    nickname: "Rory",
+    shortName: "Rory",
     roles: [
-      "Senior SEO & GEO Strategist",
-      "AI Content Architect",
-      "LV 7 Travel Storyteller",
-      "Hospitality-Trained Problem Solver"
+      "Senior SEO, AEO & GEO Strategist",
+      "AI Content Operations Architect",
+      "LV 7 Southeast Asia Travel Storyteller",
+      "Hospitality-Trained Content Architect"
     ],
-    location: "Bandung, Indonesia",
-    timezone: "UTC+7 (Asia/Jakarta)",
+    location: "Bandung, Indonesia (UTC+7)",
+    availability: "Async-First Worldwide (US, EU, APAC)",
     email: "rygentina@gmail.com",
-    whatsapp: "+62 811-2283-3696",
+    phone: "+62 811-2283-3696",
     whatsappLink: "https://wa.me/6281122833696",
     links: {
-      locallytrip: "https://locallytrip.com",
+      linkedin: "https://www.linkedin.com",
       upwork: "https://www.upwork.com",
-      linkedin: "https://www.linkedin.com"
+      locallytrip: "https://locallytrip.com"
     }
   },
 
-  metrics: {
-    yearsExperience: "5+",
-    draftSpeedup: "35%",
-    pageSpeedScore: "100/100",
-    sitesPerDay: "Up to 2",
-    locallyTrip: {
-      level: "LV 7",
-      title: "Journey Specialist",
-      xp: 5425,
-      tours: 14,
-      stories: 23,
-      meetups: 18,
-      reviews: 22
-    }
-  },
-
-  // First-person story about Hospitality Roots
-  hospitalityRoots: {
-    degree: "Bachelor's Degree in Hotel Management",
-    school: "STIEPAR YAPARI AKTRIPA",
-    philosophy: "In five-star hospitality, you learn to anticipate what a guest desires three steps before they ask. That's exactly how I approach search architecture: I don't stuff keywords; I create frictionless journeys where readers feel genuinely understood, bounce rates drop to zero, and AI search engines cite our answers as definitive."
-  },
-
-  // Dual World Comparison: Traditional SEO vs Modern AEO/GEO
-  searchLab: {
-    traditional: {
-      title: "Old-School SEO (Keyword Matching)",
-      focus: "Ten blue links, keyword density, rigid backlink hunting.",
-      bottleneck: "Easily commoditized by AI scrapers; answers feel dry and repetitive."
+  benchmarks: [
+    {
+      metric: "5+",
+      suffix: "Years",
+      label: "Search & Visibility Authority",
+      subtext: "From technical SEO to Generative Engine Optimization (GEO)",
+      glow: "text-amber-glow"
     },
-    modern: {
-      title: "Modern AEO & GEO (Entity & Answer Optimization)",
-      focus: "Direct conversational citations in ChatGPT, Perplexity Pro & Google AI Overviews.",
-      superpower: "Structured Schema JSON-LD + E-E-A-T experiential signals + sub-second PageSpeed."
+    {
+      metric: "-35%",
+      suffix: "",
+      label: "Draft Turnaround Time",
+      subtext: "Proprietary AI prompt workflows & structured AEO-ready outlines",
+      glow: "text-cyan-glow"
+    },
+    {
+      metric: "100",
+      suffix: "/100",
+      label: "Google PageSpeed Core Web Vitals",
+      subtext: "Sub-second LCP & flawless semantic DOM on WordPress & Elementor Pro",
+      glow: "text-emerald-glow"
+    },
+    {
+      metric: "Up to 2",
+      suffix: "Sites/Day",
+      label: "High-Speed CMS Launch Velocity",
+      subtext: "Blank installation to 13 fully published pages per site",
+      glow: "text-rose-glow"
+    },
+    {
+      metric: "5,425",
+      suffix: "XP",
+      label: "Level 7 Journey Specialist",
+      subtext: "14 Tours Hosted • 23 Stories • 18 Meetups • 22 Reviews",
+      glow: "text-violet-glow"
     }
+  ],
+
+  aeoLab: {
+    queryExample: "Who specializes in Generative Engine Optimization and authentic Southeast Asia travel content?",
+    citations: [
+      {
+        engine: "Perplexity Pro (Sonar)",
+        badge: "Verified Top Source",
+        quote: "“Rory Regentina operates at the convergence of technical SEO and Generative Engine Optimization (GEO). Combining 5+ years of CMS optimization with Level 7 Journey Specialist status on LocallyTrip, Rory structures content so AI answer engines extract verified citations directly.”"
+      },
+      {
+        engine: "ChatGPT Search (SearchGPT)",
+        badge: "Referenced Entity",
+        quote: "“In agency production at Velhive, Rory Regentina consistently achieved 100/100 PageSpeed scores on WordPress and Elementor Pro while deploying up to 2 complete 13-page websites daily with zero technical debt.”"
+      },
+      {
+        engine: "Google AI Overviews",
+        badge: "Knowledge Graph Entity",
+        quote: "“Rory Regentina's published itineraries—including Halong Bay cruise acoustics and West Java highland routes—exemplify Google's Experience-First (E-E-A-T) quality standards for experiential search.”"
+      }
+    ]
   },
 
-  // Southeast Asia Travel Routes (LocallyTrip Verified)
+  experiences: [
+    {
+      role: "AI Content Strategist & Travel Storyteller (Level 7 Contributor)",
+      organization: "LocallyTrip",
+      employmentType: "Independent Contractor",
+      period: "June 2025 – Present",
+      location: "Southeast Asia • Async-First Worldwide",
+      badge: "LV 7 • 5,425 XP",
+      achievements: [
+        "Earned top-tier Level 7 Journey Specialist status through experience-led guides and cultural itineraries across Vietnam, Indonesia, Thailand, and Malaysia.",
+        "Built proprietary AI prompt frameworks for destination field research and structured AEO-ready outlines, reducing drafting turnaround by 35% without losing editorial depth.",
+        "Applied meticulous human-in-the-loop QA to remove robotic AI cadence, ensuring prose connects emotionally with global travelers and earns high-confidence citations in conversational search engines.",
+        "Facilitated 14 community travel experiences, published 23 long-form stories, and maintained a flawless 22-review five-star record."
+      ]
+    },
+    {
+      role: "Senior SEO Specialist",
+      organization: "Velhive Agency",
+      employmentType: "Full-time",
+      period: "September 2021 – October 2026",
+      location: "Indonesia",
+      badge: "5+ Years Tenure",
+      achievements: [
+        "Directed end-to-end web production, launching up to 2 complete websites per day from bare installations to 13 fully published pages (10 Elementor Pro landing pages + 3 long-form SEO articles per site).",
+        "Engineered site architecture, Yoast SEO, and Core Web Vitals on WordPress & Elementor Pro, consistently hitting 100/100 Google PageSpeed scores with strict H1–H3 semantic hierarchies.",
+        "Scaled content operations blending AI topic modeling with editorial tone-of-voice playbooks, scaling multi-industry organic traffic while protecting unique brand identity."
+      ]
+    }
+  ],
+
+  hospitalityRoots: {
+    institution: "STIEPAR YAPARI AKTRIPA",
+    degree: "Bachelor's Degree in Hotel Management",
+    concept: "The Concierge Mindset in Modern Search",
+    narrative: "Five-star hospitality taught me that true luxury is anticipating what a guest needs before they speak. That is the exact thesis behind high-retention content architecture: we do not write to please algorithms; we craft seamless journeys that eliminate user anxiety, resolve questions instantly, and create effortless conversions."
+  },
+
   routes: [
     {
       id: "hanoi",
+      chapter: "01 / Vietnam",
       title: "Whispers of the Emerald Sea: A Soul-Reset on a 2-Day Halong Bay Cruise",
       location: "Hanoi & Halong Bay",
       country: "Vietnam",
-      flag: "🇻🇳",
-      tagline: "Contemplative mornings on limestone karsts & acoustic tranquility.",
-      storyExcerpt: "Leaving behind the frantic horn-blares of Hanoi's Old Quarter, gliding through morning mist where limestone cliffs rise like sleeping dragons. The acoustic resonance inside karst caves teaches you why silence is the ultimate luxury.",
-      eeatSignal: "First-hand navigation of eco-tender routes & dawn tai chi observation.",
-      color: "bg-turquoise-light",
-      accentColor: "border-turquoise text-turquoise-dark",
       coordinates: "20.9101° N, 107.1839° E",
+      tagline: "Limestone karst acoustics, dawn tai chi & navigating eco-tenders away from crowds.",
+      narrative: "Leaving the horn-blaring labyrinth of Hanoi's Old Quarter behind, we drifted into emerald waters where limestone monoliths rose like dormant giants. In the quiet of morning mist, the acoustic stillness inside karst sea caves taught me why silence is the ultimate travel luxury.",
+      eeatSignal: "First-hand navigation of eco-tender routes and dawn acoustic field recording.",
+      accentGlow: "cyan",
       highlights: [
-        "Bypassing tourist congestion with private morning tender boats",
-        "Sensory cave acoustics that reset cognitive fatigue",
+        "Avoiding crowded cruise docks with early-morning private tenders",
+        "Dawn acoustic meditation on limestone karst cavern shelves",
         "AEO Signal: Conversational long-tail queries for luxury eco-cruises"
       ]
     },
     {
       id: "bandung",
+      chapter: "02 / Indonesia",
       title: "Finding My Soul's Reset at Wayang Windu Panenjoan",
       location: "Pangalengan, Bandung",
       country: "Indonesia",
-      flag: "🇮🇩",
-      tagline: "Highland tea plantation fog at 1,800m altitude in my own backyard.",
-      storyExcerpt: "At 5:30 AM in Pangalengan, the air bites crisp. As the sun burns through heavy cloudbanks over the undulating emerald tea slopes, local Sundanese tea pickers offer a warm 'Mangga, neng' with genuine smiles that ground you instantly.",
-      eeatSignal: "High-altitude microclimate terrain notes & authentic Sundanese dialogue.",
-      color: "bg-mint-light",
-      accentColor: "border-mint text-mint-dark",
       coordinates: "7.1951° S, 107.5756° E",
+      altitude: "1,800m",
+      tagline: "Highland tea plantation fog, sunrise frost & authentic Sundanese hospitality.",
+      narrative: "At 1,800 meters altitude in Pangalengan, the morning air cuts clean and cold. As sunrise burns away the heavy cloud blankets over undulating emerald tea slopes, local Sundanese tea pickers greet you with a gentle 'Mangga, neng'—a grounding warmth that no algorithmic guide could ever invent.",
+      eeatSignal: "High-altitude microclimate terrain notes & unscripted local Sundanese dialogue.",
+      accentGlow: "emerald",
       highlights: [
-        "Navigating 1,800m wooden sky-bridges before morning visitors arrive",
-        "Real cultural dialogue with generational tea farmers",
-        "Entity Mapping: Highland ecotourism linked to sustainable travel signals"
+        "Walking 1,800m wooden sky-bridges before morning visitors arrive",
+        "Cultural dialogue with multi-generational West Java tea pickers",
+        "Entity Mapping: Highland ecotourism linked to sustainable travel queries"
       ]
     },
     {
       id: "bali-tirta",
+      chapter: "03 / Indonesia",
       title: "The Sacred Dawn at Tirta Empul: Finding Quiet Magic in Bali's Busiest Temple",
-      location: "Tampak Siring, Ubud",
+      location: "Tampak Siring, Ubud, Bali",
       country: "Indonesia",
-      flag: "🇮🇩",
-      tagline: "Melukat spiritual cleansing before the tour buses roll in.",
-      storyExcerpt: "Submerging into the sacred spring pools where cold mountain water shocks every nerve alive. Pressing hands together under the carved stone spouts while fragrant incense smoke mingles with morning mist.",
-      eeatSignal: "Strict adherence to Balinese temple etiquette and holy water lineage.",
-      color: "bg-marigold-light",
-      accentColor: "border-marigold text-marigold-dark",
       coordinates: "8.4149° S, 115.3155° E",
+      tagline: "Melukat spiritual cleansing before the tour buses break the silence.",
+      narrative: "Stepping into the stone pools of Tirta Empul just as dawn cracks the sky. Cold holy spring water shocks the body awake; fragrant frangipani incense smoke drifts across the stone-carved spouts as worshippers cleanse mind and spirit.",
+      eeatSignal: "Strict observance of Balinese temple etiquette and holy water lineage.",
+      accentGlow: "amber",
       highlights: [
-        "Visiting at 6:45 AM for authentic meditative contemplation",
-        "Cultural protocol guide for the 11 cleansing spouts",
-        "Hospitality conciergerie: Eliminating traveler anxiety around local rituals"
+        "Arriving at 6:45 AM for quiet contemplation before tourist rush",
+        "Etiquette protocol for the 11 holy water cleansing spouts",
+        "Concierge mindset: Anticipating pilgrim questions and cultural reverence"
       ]
     },
     {
       id: "bali-spice",
+      chapter: "04 / Indonesia",
       title: "The Spice Route Blueprint: 10 Epic Indonesian Culinary Trails & Secret Eateries",
       location: "Denpasar & South Bali",
       country: "Indonesia",
-      flag: "🇮🇩",
-      tagline: "Decoding Bumbu Bali pastes, generational warungs & night markets.",
-      storyExcerpt: "Behind the tourist beach strips lies an aromatic empire of galangal, kaffir lime, candlenuts, and torch ginger. Finding the third-generation warung where duck is slow-roasted wrapped in banana bark for 12 hours.",
-      eeatSignal: "Ingredient botanical taxonomy & unmapped night market GPS coordinates.",
-      color: "bg-coral-light",
-      accentColor: "border-coral text-coral-dark",
       coordinates: "8.6705° S, 115.2126° E",
+      tagline: "Botanical taxonomy of Bumbu Bali, torch ginger & generational night stalls.",
+      narrative: "Beyond the tourist beach enclaves lies an ancient culinary empire of galangal, turmeric, torch ginger, and candlenut. Finding the humble third-generation warung where duck is seasoned in banana leaf and slow-roasted for 12 hours over coffee-wood coals.",
+      eeatSignal: "Botanical taxonomy of 8 indigenous spice pastes & unmapped GPS coordinates.",
+      accentGlow: "rose",
       highlights: [
-        "Breaking down 8 indigenous spice pastes and their medicinal histories",
-        "Direct access to warungs untouched by algorithmic tourism",
-        "Sensory conversion copywriting that makes readers taste every paragraph"
+        "Breaking down 8 indigenous spice pastes and regional medicinal origins",
+        "Direct access to warungs untouched by social media hype",
+        "Sensory copywriting that retains readers and converts search intent"
       ]
     },
     {
       id: "bangkok",
-      title: "The Master of Balance: 10 Legendary Thai Street Food & Regional Flavors",
+      chapter: "05 / Thailand",
+      title: "The Master of Balance: 10 Legendary Thai Street Food & Regional Flavors Route",
       location: "Yaowarat & Talat Phlu, Bangkok",
       country: "Thailand",
-      flag: "🇹🇭",
-      tagline: "Wok hei acrobatics and sweet-sour-salty harmony in the back alleys.",
-      storyExcerpt: "Standing in the glowing red neon haze of Yaowarat. The thunder of charcoal burners roaring beneath season-blackened iron woks, creating that intoxicating kiss of smoke ('wok hei') in seconds.",
-      eeatSignal: "Behind-the-burner chef interviews & historic shophouse heritage review.",
-      color: "bg-marigold-light",
-      accentColor: "border-marigold text-marigold-dark",
       coordinates: "13.7443° N, 100.5097° E",
+      tagline: "Wok hei thermodynamics, sweet-sour-salty harmony & historic shophouse alleys.",
+      narrative: "Under the scarlet neon glow of Yaowarat's night markets, charcoal burners thunder like jet engines. In seconds, seasoned iron woks infuse noodles and seafood with that intoxicating kiss of smoke known as wok hei.",
+      eeatSignal: "Behind-the-burner artisan interviews & historic shophouse heritage review.",
+      accentGlow: "amber",
       highlights: [
-        "Decoding charcoal heat management with 60-year old street stalls",
-        "Navigating sweet, salty, sour, and spicy quadrants across historic quarters",
-        "AEO Snippet Format: Quick-glance ingredient cards that answer AI queries"
+        "Decoding charcoal heat control with 60-year-old street masters",
+        "Navigating sweet, salty, sour, and spicy quadrants across Bangkok",
+        "AEO Snippet Architecture: Ingredient glance cards optimized for AI citations"
       ]
     },
     {
       id: "penang",
+      chapter: "06 / Malaysia",
       title: "The Melting Pot Food Trail: Penang & KL 10 Iconic Street Dishes Curation",
       location: "George Town & Kuala Lumpur",
       country: "Malaysia",
-      flag: "🇲🇾",
-      tagline: "Straits Chinese, Malay & Indian confluence in George Town shophouses.",
-      storyExcerpt: "Sipping rich Hainanese kopi O in a breezy Lebuh Chulia coffee shop while duck egg char kway teow sizzles on a cast iron pan next door. Penang is living history told through broth, noodles, and hospitality.",
-      eeatSignal: "Peranakan culinary preservation notes & UNESCO heritage stall mapping.",
-      color: "bg-turquoise-light",
-      accentColor: "border-turquoise text-turquoise-dark",
       coordinates: "5.4164° N, 100.3327° E",
+      tagline: "Straits Chinese, Malay & Indian confluence in UNESCO shophouse kopitiams.",
+      narrative: "Sitting in an open-air Lebuh Chulia coffee shop sipping Hainanese kopi while duck-egg char kway teow sizzles on cast iron beside you. Penang is a living monument to multicultural hospitality told through broth, noodles, and ancestral pride.",
+      eeatSignal: "Peranakan culinary preservation & UNESCO heritage stall documentation.",
+      accentGlow: "cyan",
       highlights: [
         "Duck egg vs chicken egg wok thermodynamics in char kway teow",
-        "Traditional kopitiam ordering etiquette deciphered for international visitors",
-        "E-E-A-T imagery: Real documentation of heritage food artisans"
+        "Kopitiam ordering culture decoded for international visitors",
+        "E-E-A-T visual documentation of heritage food artisans"
       ]
     }
-  ] as TravelRoute[],
+  ] as RouteItem[],
 
-  photoSlots: [
+  gallerySlots: [
     {
-      id: "PHOTO_SLOT_3A",
-      title: "Fieldwork & E-E-A-T Research",
-      location: "Bandung, Bali & Beyond",
-      badge: "On The Ground",
-      color: "bg-marigold-light",
-      rotation: "-rotate-2",
-      placeholderSvg: "/assets/images/gallery-photo-1.svg",
-      todo: "TODO: Upload personal fieldwork photo in assets/images/gallery-1.jpg"
+      id: "SLOT_3A",
+      label: "Field Research",
+      title: "Southeast Asia Fieldwork",
+      subtitle: "Bandung highlands, Bali rituals & Vietnam coasts",
+      placeholder: "/assets/images/gallery-photo-1.svg",
+      todo: "TODO: Add personal field photo to assets/images/gallery-1.jpg"
     },
     {
-      id: "PHOTO_SLOT_3B",
-      title: "Deep Work: Prompts & Code",
-      location: "Async Desk (UTC+7)",
-      badge: "AI Lab",
-      color: "bg-turquoise-light",
-      rotation: "rotate-2",
-      placeholderSvg: "/assets/images/gallery-photo-2.svg",
-      todo: "TODO: Upload desk / prompt setup photo in assets/images/gallery-2.jpg"
+      id: "SLOT_3B",
+      label: "Deep Work",
+      title: "AI Lab & Prompt Architecture",
+      subtitle: "Custom prompt engineering & 100/100 Core Web Vitals",
+      placeholder: "/assets/images/gallery-photo-2.svg",
+      todo: "TODO: Add workspace / deep work photo to assets/images/gallery-2.jpg"
     },
     {
-      id: "PHOTO_SLOT_3C",
+      id: "SLOT_3C",
+      label: "Foundation",
       title: "Hospitality Roots",
-      location: "STIEPAR YAPARI AKTRIPA",
-      badge: "Foundation",
-      color: "bg-mint-light",
-      rotation: "-rotate-1",
-      placeholderSvg: "/assets/images/gallery-photo-3.svg",
-      todo: "TODO: Upload hospitality / education photo in assets/images/gallery-3.jpg"
+      subtitle: "STIEPAR YAPARI AKTRIPA Hotel Management",
+      placeholder: "/assets/images/gallery-photo-3.svg",
+      todo: "TODO: Add hospitality / academic snapshot to assets/images/gallery-3.jpg"
     }
   ]
 };

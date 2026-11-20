@@ -1,62 +1,66 @@
 import React, { useState } from 'react';
-import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { BentoDualWorld } from './components/BentoDualWorld';
-import { TravelCarousel } from './components/TravelCarousel';
-import { PhotoStrip } from './components/PhotoStrip';
-import { PlayfulContactDock } from './components/PlayfulContactDock';
+import { ScrollHUD } from './components/ScrollHUD';
+import { HeroStage } from './components/HeroStage';
+import { SearchAeoLab } from './components/SearchAeoLab';
+import { FieldStories } from './components/FieldStories';
+import { HospitalityExperience } from './components/HospitalityExperience';
+import { FieldGallery } from './components/FieldGallery';
+import { ContactDialogue } from './components/ContactDialogue';
 import { RouteModal } from './components/RouteModal';
 import { Footer } from './components/Footer';
-import { TravelRoute } from './data/portfolioData';
+import { RouteItem } from './data/portfolioData';
 
 export const App: React.FC = () => {
-  const [selectedRoute, setSelectedRoute] = useState<TravelRoute | null>(null);
+  const [selectedRoute, setSelectedRoute] = useState<RouteItem | null>(null);
 
   const scrollToContact = () => {
     const el = document.getElementById('contact');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const scrollToWork = () => {
-    const el = document.getElementById('dual-world');
+  const scrollToSearchLab = () => {
+    const el = document.getElementById('search-lab');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <div className="min-h-screen bg-canvas text-ink font-body selection:bg-marigold selection:text-ink">
-      {/* Sticky Playful Navigation Bar */}
-      <Navbar onContactClick={scrollToContact} />
+    <div className="min-h-screen bg-obsidian text-ivory selection:bg-amber-glow selection:text-obsidian relative">
+      {/* Top Floating Scroll HUD & Story Progress */}
+      <ScrollHUD onContactClick={scrollToContact} />
 
-      {/* Main Content Sections */}
+      {/* Main Content Chapters */}
       <main>
-        {/* Kinetic Hero & 3D Tilt Polaroid */}
-        <Hero 
-          onExploreWork={scrollToWork} 
-          onSayHi={scrollToContact} 
+        {/* Chapter 01: Hero Stage with Parallax Portrait (`me.jpg`) & Overlays */}
+        <HeroStage 
+          onExploreClick={scrollToSearchLab}
+          onContactClick={scrollToContact}
         />
 
-        {/* Asymmetrical Bento Grid: Search Lab vs LocallyTrip & Hospitality */}
-        <BentoDualWorld />
+        {/* Chapter 02: The Search & AI Lab (AEO/GEO & Benchmarks) */}
+        <SearchAeoLab />
 
-        {/* Southeast Asia Field Stories Carousel */}
-        <TravelCarousel 
-          onSelectRoute={(route) => setSelectedRoute(route)} 
+        {/* Chapter 03: Field Notes & Curated Southeast Asia Routes */}
+        <FieldStories 
+          onSelectRoute={(route) => setSelectedRoute(route)}
         />
 
-        {/* Personal Photo Strip (Polaroids with TODO markers) */}
-        <PhotoStrip />
+        {/* Empathy Foundation: Hospitality Roots (STIEPAR) & Career Milestones */}
+        <HospitalityExperience />
 
-        {/* Playful Interactive Contact Dock & Message Builder */}
-        <PlayfulContactDock />
+        {/* Visual Field Gallery: [PHOTO_SLOT_3_GALLERY_GRID] */}
+        <FieldGallery />
+
+        {/* Chapter 04: Direct Dialogue & Async Project Inquiry */}
+        <ContactDialogue />
       </main>
 
       {/* Footer */}
       <Footer />
 
-      {/* Travel Route Deep-Dive Modal */}
+      {/* Route Deep-Dive Modal */}
       <RouteModal 
-        route={selectedRoute} 
-        onClose={() => setSelectedRoute(null)} 
+        route={selectedRoute}
+        onClose={() => setSelectedRoute(null)}
       />
     </div>
   );

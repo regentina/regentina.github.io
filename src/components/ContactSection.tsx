@@ -119,47 +119,56 @@ export const ContactSection: React.FC = () => {
             </div>
 
             {/* Verified Profile Links */}
-            <div className="grid grid-cols-3 gap-3 pt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
               <a
                 href={PORTFOLIO_DATA.profile.links.locallytrip}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-xl border border-white/10 bg-[#0D0D0D] text-center hover:bg-white hover:text-black transition-all group"
+                className="p-4 rounded-xl border border-white/10 bg-[#0D0D0D] flex sm:flex-col items-center justify-between sm:justify-center text-left sm:text-center hover:bg-white hover:text-black transition-all group"
               >
-                <div className="font-mono text-xs uppercase tracking-widest text-white group-hover:text-black">
-                  LocallyTrip
+                <div>
+                  <div className="font-mono text-xs uppercase tracking-widest text-white group-hover:text-black">
+                    LocallyTrip
+                  </div>
+                  <div className="text-[10px] font-mono text-zinc-500 group-hover:text-black/70 mt-0.5 sm:mt-1">
+                    LV 7 Specialist
+                  </div>
                 </div>
-                <div className="text-[10px] font-mono text-zinc-500 group-hover:text-black/70 mt-1">
-                  LV 7 Specialist
-                </div>
+                <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-black sm:hidden" />
               </a>
 
               <a
                 href={PORTFOLIO_DATA.profile.links.upwork}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-xl border border-white/10 bg-[#0D0D0D] text-center hover:bg-white hover:text-black transition-all group"
+                className="p-4 rounded-xl border border-white/10 bg-[#0D0D0D] flex sm:flex-col items-center justify-between sm:justify-center text-left sm:text-center hover:bg-white hover:text-black transition-all group"
               >
-                <div className="font-mono text-xs uppercase tracking-widest text-white group-hover:text-black">
-                  Upwork
+                <div>
+                  <div className="font-mono text-xs uppercase tracking-widest text-white group-hover:text-black">
+                    Upwork
+                  </div>
+                  <div className="text-[10px] font-mono text-zinc-500 group-hover:text-black/70 mt-0.5 sm:mt-1">
+                    Top Rated
+                  </div>
                 </div>
-                <div className="text-[10px] font-mono text-zinc-500 group-hover:text-black/70 mt-1">
-                  Top Rated
-                </div>
+                <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-black sm:hidden" />
               </a>
 
               <a
                 href={PORTFOLIO_DATA.profile.links.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-xl border border-white/10 bg-[#0D0D0D] text-center hover:bg-white hover:text-black transition-all group"
+                className="p-4 rounded-xl border border-white/10 bg-[#0D0D0D] flex sm:flex-col items-center justify-between sm:justify-center text-left sm:text-center hover:bg-white hover:text-black transition-all group"
               >
-                <div className="font-mono text-xs uppercase tracking-widest text-white group-hover:text-black">
-                  LinkedIn
+                <div>
+                  <div className="font-mono text-xs uppercase tracking-widest text-white group-hover:text-black">
+                    LinkedIn
+                  </div>
+                  <div className="text-[10px] font-mono text-zinc-500 group-hover:text-black/70 mt-0.5 sm:mt-1">
+                    Connect
+                  </div>
                 </div>
-                <div className="text-[10px] font-mono text-zinc-500 group-hover:text-black/70 mt-1">
-                  Connect
-                </div>
+                <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-black sm:hidden" />
               </a>
             </div>
 

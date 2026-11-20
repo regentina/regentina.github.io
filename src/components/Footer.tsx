@@ -7,28 +7,16 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="border-t border-white/5 bg-obsidian-deep py-12">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <footer className="relative z-10 bg-[#060606] py-16 px-6 sm:px-10 hairline-border-t">
+      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-xs font-mono uppercase tracking-widest text-zinc-500">
         
-        {/* Brand & Personal Signature */}
-        <div className="flex items-center gap-3 text-center sm:text-left">
-          <div className="w-9 h-9 rounded-xl bg-surface-elevated hairline-border flex items-center justify-center text-ivory font-heading font-black text-xs">
-            RR
-          </div>
-          <div>
-            <div className="font-heading font-bold text-sm text-ivory">
-              Rory Regentina
-            </div>
-            <p className="text-xs font-mono text-ivory-dim">
-              Dark Editorial Portfolio • Bandung (UTC+7, Async Worldwide)
-            </p>
-          </div>
+        <div>
+          <span>© 2026 Rory Regentina. All rights reserved.</span>
         </div>
 
-        {/* Back to Top */}
         <button
           onClick={scrollToTop}
-          className="px-4 py-2 rounded-full dark-glass hairline-border text-xs font-mono text-ivory hover:text-white flex items-center gap-1.5 transition-colors cursor-pointer"
+          className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"
         >
           <span>Back to Top</span>
           <ArrowUp className="w-3.5 h-3.5" />

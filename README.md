@@ -1,42 +1,41 @@
 # Rory Regentina — Dark Editorial Portfolio
-> **Senior SEO, AEO & GEO Strategist, AI Content Operations Architect & Level 7 LocallyTrip Storyteller**  
+> **Senior SEO & GEO Strategist, AI Content Operations Architect & Level 7 LocallyTrip Storyteller**  
 > Live at: [https://regentina.github.io](https://regentina.github.io)
 
-A moody, high-craft, personal portfolio web application centered around **scroll-driven overlay animations** and personal portrait photography (`me.jpg`), built with **React 19, TypeScript, Tailwind CSS, and Framer Motion**, deployed via **Vite + GitHub Actions** to GitHub Pages (`regentina.github.io`).
+An ultra-elegant, quiet-luxury **Dark Editorial Personal Portfolio** built with **React 19, TypeScript, Tailwind CSS, and Framer Motion**, deployed via **Vite + GitHub Actions** to GitHub Pages (`regentina.github.io`).
 
 ---
 
-## 🖤 Design Direction & Dark Editorial Palette
-- **Aesthetic Taxonomy:** One Page Love (`Dark`, `Scroll Effects`, `Editorial`, `Typographic`, `Portfolio`, `Personal`, `Case Study`).
-- **Surface Hierarchy:**
-  - **Deep Obsidian Background:** `#090B0F` to `#0E1218`
-  - **Elevated Surfaces / Overlay Cards:** Dark Slate (`#121721` / `#161D2A`) with subtle 1px hairline borders (`rgba(255,255,255,0.08)`) and backdrop blur (`backdrop-blur-xl`).
-  - **High-Contrast Typography:** Crisp Ivory (`#F4F6FA`) on dark background (contrast `> 14:1`, exceeding WCAG AAA).
-  - **Accents:** Warm Amber (`#F59E0B`), Cyan (`#22D3EE`), and Soft Rose (`#FB7185`).
+## 🖤 Design Direction & Minimalist Monochrome Aesthetic
+- **Strict Monochrome Palette (No Neon / No Rainbow):**
+  - **Canvas Canvas:** Pure Obsidian & Matte Black (`#060606` and `#0D0D0D`).
+  - **Surface & Stacking Cards:** Deep Charcoal (`#121212` / `#161616`) with hairline borders (`border-white/10`).
+  - **Typography:** Pure White (`#FFFFFF`) for headlines, Soft Off-White (`#D4D4D8`) for body, and Muted Gray (`#71717A`) for labels.
+  - **Accent:** Subtle warm champagne tone (`#E5D5C5`) and pure white-on-black inversion.
+- **High-Fashion Editorial Typography:**
+  - **Headlines:** `Cormorant Garamond` (light/regular weight, tight tracking) for a dramatic, quiet-luxury gallery presence.
+  - **Body & UI:** `Plus Jakarta Sans` / `Inter` (regular 400, generous line-height `1.7`, crisp legibility).
 
 ---
 
-## 🎬 Scroll Overlay Animation System (Framer Motion)
-1. **Top Floating Scroll HUD & Chapter Progress:** Slim gradient scroll-progress line + active story chapter indicator (*01 Stage*, *02 Search & AI*, *03 Field Routes*, *04 Dialogue*) + live UTC+7 Bandung / Indonesia clock.
-2. **Hero Stage Parallax Portrait:**
-   - Features `me.jpg` with `useScroll` + `useTransform` parallax panning and subtle zoom.
-   - Smooth edge vignette blending directly into the dark canvas.
-   - Floating glass overlay cards and badges gliding at varying parallax speeds.
-3. **The Search & AI Lab:**
-   - Sticky/parallax overlay cards comparing modern AEO/GEO vs legacy SEO.
-   - Interactive Citation Simulator comparing Perplexity Pro, ChatGPT Search, and Google AI Overviews.
-   - Key verified benchmarks: `5+ Years`, `-35% Turnaround`, `100/100 PageSpeed`, `Up to 2 Sites/Day`, `5,425 XP`.
-4. **Field Notes & Southeast Asia Routes (LocallyTrip Showcase):**
-   - Feature banner for `[PHOTO_SLOT_2_FIELD_STORYTELLING]` with dark vignette mask.
-   - 6 Curated Route Cards (Hanoi, Bandung, Ubud Bali, Spice Route Denpasar, Bangkok, Penang & KL) with interactive field notes modal.
-5. **Hospitality Roots & Career Trajectory:**
-   - Hotel Management degree at **STIEPAR YAPARI AKTRIPA** informing user-first content architecture.
-   - Milestones at Velhive Agency (Sept 2021 – Oct 2026) and LocallyTrip (June 2025 – Present).
-6. **Field Gallery Strip (`[PHOTO_SLOT_3_GALLERY_GRID]`):**
-   - 3 dark editorial frames ready for direct personal/field photo integration.
-7. **Contact Dialogue & Project Brief Launcher:**
-   - 1-click clipboard copy for email (`rygentina@gmail.com`) and phone (`+62 811-2283-3696`) with toast + confetti.
-   - Direct launch links for WhatsApp, Email, LinkedIn, Upwork, and LocallyTrip.
+## 🎬 Scroll Overlay Mechanics (Sticky Curtain & Stacking Cards)
+1. **Sticky Hero Curtain Overlay:**
+   - The Hero section is anchored (`sticky top-0 min-h-dvh z-0`) so `me.jpg` and the editorial headline stay pinned while slightly scaling down (`1` -> `0.94`) and dimming (`opacity: 1` -> `0.35`) on scroll.
+   - The **About & Philosophy** section slides smoothly **OVER** the pinned hero (`relative z-10 bg-[#0D0D0D] rounded-t-[2.5rem] border-t border-white/10 shadow-2xl`) like a tactile editorial curtain.
+2. **Seamless Portrait Integration (`me.jpg`):**
+   - The personal portrait dissolves naturally into the `#060606` canvas using CSS gradient masks (`portrait-editorial-mask`), creating a dramatic studio look without glowing boxes or card borders.
+3. **Editorial Metrics Strip (Clean Hairline Grid):**
+   - Minimalist 4-column hairline grid: `5+ Yrs` (Search Visibility), `100/100` (Google PageSpeed), `-35%` (AI Draft Turnaround), and `LV 7 • 5,425 XP` (LocallyTrip Host).
+4. **Interactive Capabilities Accordion:**
+   - Sleek full-width rows with hairline borders (`border-white/10`) and right arrows that smoothly expand on click/hover with white-on-black active inversion:
+     - *01 / Modern Search (SEO, AEO & GEO)*
+     - *02 / Technical & CMS Optimization*
+     - *03 / AI Content Operations*
+     - *04 / Travel & Hospitality Storytelling*
+5. **Sticky Stacking Overlay Cards:**
+   - A vertical Sticky Stacking Card sequence (`sticky top-24` with incremental offsets) where each Southeast Asia route card physically glides **OVER** the previous card as the user scrolls down.
+6. **Mobile-First Smoothness:**
+   - Root elements use `overflow-x: clip` so `position: sticky` never breaks on mobile or desktop viewports.
 
 ---
 
@@ -44,11 +43,9 @@ A moody, high-craft, personal portfolio web application centered around **scroll
 
 | Slot | File Path | Status |
 | :--- | :--- | :--- |
-| **`[PHOTO_SLOT_1_HERO_PORTRAIT]`** | `./src/assets/me.jpg` & `/public/me.jpg` | ✅ Active (Rory's personal portrait) |
-| **`[PHOTO_SLOT_2_FIELD_STORYTELLING]`** | `/public/assets/images/field-storytelling-placeholder.svg` | Optional: ready to swap with field photo |
-| **`[PHOTO_SLOT_3A_FIELD_RESEARCH]`** | `/public/assets/images/gallery-photo-1.svg` | Optional: ready to swap in gallery |
-| **`[PHOTO_SLOT_3B_AI_OPERATIONS]`** | `/public/assets/images/gallery-photo-2.svg` | Optional: ready to swap in gallery |
-| **`[PHOTO_SLOT_3C_HOSPITALITY_ROOTS]`** | `/public/assets/images/gallery-photo-3.svg` | Optional: ready to swap in gallery |
+| **`[PHOTO_SLOT_1_HERO_PORTRAIT]`** | `./src/assets/me.jpg` & `/public/me.jpg` | ✅ Active (Rory's personal portrait seamlessly dissolved) |
+| **`[PHOTO_SLOT_2_FIELD_STORYTELLING]`** | `/public/assets/images/field-storytelling-placeholder.svg` | Ready to swap in routes |
+| **`[PHOTO_SLOT_3_GALLERY_GRID]`** | `/public/assets/images/gallery-photo-1.svg` etc. | Ready to swap in gallery |
 
 ---
 

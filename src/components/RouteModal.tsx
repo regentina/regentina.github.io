@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, MapPin, Sparkles, CheckCircle2, ExternalLink } from 'lucide-react';
-import { RouteItem } from '../data/portfolioData';
+import { X, ArrowUpRight } from 'lucide-react';
+import { RouteCard } from '../data/portfolioData';
 
 interface RouteModalProps {
-  route: RouteItem | null;
+  route: RouteCard | null;
   onClose: () => void;
 }
 
@@ -13,7 +13,7 @@ export const RouteModal: React.FC<RouteModalProps> = ({ route, onClose }) => {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
         
         {/* Backdrop */}
         <motion.div
@@ -21,80 +21,77 @@ export const RouteModal: React.FC<RouteModalProps> = ({ route, onClose }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-obsidian-deep/80 backdrop-blur-md"
+          className="fixed inset-0 bg-[#060606]/80 backdrop-blur-md"
         />
 
-        {/* Modal Card */}
+        {/* Modal Window */}
         <motion.div
-          initial={{ scale: 0.92, opacity: 0, y: 20 }}
+          initial={{ scale: 0.94, opacity: 0, y: 20 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
-          exit={{ scale: 0.92, opacity: 0, y: 20 }}
-          transition={{ type: 'spring', bounce: 0.2 }}
-          className="relative max-w-2xl w-full dark-glass rounded-3xl hairline-border p-6 sm:p-8 z-10 max-h-[85vh] overflow-y-auto shadow-2xl"
+          exit={{ scale: 0.94, opacity: 0, y: 20 }}
+          transition={{ duration: 0.25, ease: 'easeOut' }}
+          className="relative max-w-2xl w-full bg-[#121212] border border-white/15 rounded-3xl p-8 sm:p-10 z-10 max-h-[85vh] overflow-y-auto shadow-2xl"
         >
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-5 right-5 p-2 rounded-full dark-glass hairline-border text-ivory hover:text-white transition-colors cursor-pointer"
-            aria-label="Close modal"
+            className="absolute top-6 right-6 p-2 rounded-full border border-white/10 text-zinc-400 hover:text-white hover:border-white/30 transition-colors cursor-pointer"
+            aria-label="Close dialog"
           >
             <X className="w-5 h-5" />
           </button>
 
-          {/* Header */}
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-xs font-mono text-cyan-glow uppercase tracking-wider">
-              {route.chapter}
-            </span>
-            <span className="text-ivory-dim">•</span>
-            <span className="text-xs font-mono text-amber-glow">{route.coordinates}</span>
+          {/* Chapter Metadata */}
+          <div className="flex items-center gap-3 text-xs font-mono uppercase tracking-widest text-zinc-500 mb-4">
+            <span>{route.number} / {route.country}</span>
+            <span>•</span>
+            <span className="text-[#E5D5C5]">{route.coordinates}</span>
           </div>
 
-          <h3 className="font-heading font-black text-2xl sm:text-3xl text-ivory leading-tight mb-4">
+          <h3 className="font-editorial text-3xl sm:text-4xl text-white font-light leading-tight mb-4">
             {route.title}
           </h3>
 
-          <div className="p-4 rounded-2xl bg-surface-elevated hairline-border font-serif italic text-sm sm:text-base text-ivory leading-relaxed mb-6">
+          <p className="font-editorial italic text-base sm:text-lg text-zinc-300 font-light leading-relaxed pl-4 border-l border-white/20 mb-8">
             “{route.narrative}”
-          </div>
+          </p>
 
-          {/* E-E-A-T Signal Highlight */}
-          <div className="mb-6">
-            <div className="flex items-center gap-1.5 text-xs font-mono text-rose-glow uppercase tracking-wider mb-2">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Verified Search E-E-A-T Signal</span>
+          {/* E-E-A-T Signal */}
+          <div className="mb-8 p-5 rounded-2xl bg-[#161616] border border-white/5 space-y-2">
+            <div className="text-[11px] font-mono uppercase tracking-widest text-[#E5D5C5]">
+              Verified E-E-A-T Experience Signal:
             </div>
-            <div className="p-3.5 rounded-xl bg-surface-elevated hairline-border text-xs font-mono text-ivory">
+            <div className="text-xs sm:text-sm text-zinc-300 font-light leading-relaxed">
               {route.eeatSignal}
             </div>
           </div>
 
-          {/* Key Field Takeaways */}
+          {/* Key Field Observations */}
           <div className="mb-8">
-            <h4 className="font-heading font-bold text-xs uppercase tracking-wider text-ivory-dim mb-3">
-              Field Observations &amp; Itinerary Highlights:
-            </h4>
-            <div className="space-y-2">
-              {route.highlights.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-ivory-muted">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-glow shrink-0 mt-0.5" />
-                  <span>{item}</span>
+            <div className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-3">
+              Field Observations &amp; Itinerary Takeaways:
+            </div>
+            <div className="space-y-2.5">
+              {route.takeaways.map((takeaway, idx) => (
+                <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-zinc-300 font-light">
+                  <span className="text-[#E5D5C5] font-mono text-xs mt-0.5">❯</span>
+                  <span>{takeaway}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Footer */}
-          <div className="flex items-center justify-between gap-4 pt-4 border-t border-white/5 flex-wrap">
-            <span className="text-xs font-mono text-ivory-dim">LocallyTrip Verified Itinerary</span>
+          {/* Footer Action */}
+          <div className="pt-6 border-t border-white/10 flex items-center justify-between gap-4 flex-wrap">
+            <span className="text-xs font-mono text-zinc-500">LocallyTrip Verified Itinerary</span>
             <a
               href="https://locallytrip.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 rounded-xl bg-ivory text-obsidian font-heading font-black text-xs flex items-center gap-1.5 hover:bg-white transition-colors"
+              className="px-5 py-2.5 bg-white text-black rounded-full font-mono text-xs uppercase tracking-widest hover:bg-[#E5D5C5] transition-colors flex items-center gap-1.5"
             >
               <span>Explore on LocallyTrip</span>
-              <ExternalLink className="w-3.5 h-3.5" />
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
 

@@ -1,57 +1,56 @@
 import React, { useState } from 'react';
-import { ScrollHUD } from './components/ScrollHUD';
-import { HeroStage } from './components/HeroStage';
-import { SearchAeoLab } from './components/SearchAeoLab';
-import { FieldStories } from './components/FieldStories';
+import { Navbar } from './components/Navbar';
+import { Hero } from './components/Hero';
+import { CurtainAbout } from './components/CurtainAbout';
+import { CapabilitiesAccordion } from './components/CapabilitiesAccordion';
+import { StickyStackingRoutes } from './components/StickyStackingRoutes';
 import { HospitalityExperience } from './components/HospitalityExperience';
-import { FieldGallery } from './components/FieldGallery';
-import { ContactDialogue } from './components/ContactDialogue';
+import { ContactSection } from './components/ContactSection';
 import { RouteModal } from './components/RouteModal';
 import { Footer } from './components/Footer';
-import { RouteItem } from './data/portfolioData';
+import { RouteCard } from './data/portfolioData';
 
 export const App: React.FC = () => {
-  const [selectedRoute, setSelectedRoute] = useState<RouteItem | null>(null);
+  const [selectedRoute, setSelectedRoute] = useState<RouteCard | null>(null);
 
   const scrollToContact = () => {
     const el = document.getElementById('contact');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const scrollToSearchLab = () => {
-    const el = document.getElementById('search-lab');
+  const scrollToAbout = () => {
+    const el = document.getElementById('about');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <div className="min-h-screen bg-obsidian text-ivory selection:bg-amber-glow selection:text-obsidian relative">
-      {/* Top Floating Scroll HUD & Story Progress */}
-      <ScrollHUD onContactClick={scrollToContact} />
+    <div className="min-h-dvh bg-[#060606] text-[#D4D4D8] selection:bg-[#E5D5C5] selection:text-[#060606] relative">
+      {/* Ultra-Minimal Top Navigation */}
+      <Navbar onContactClick={scrollToContact} />
 
-      {/* Main Content Chapters */}
-      <main>
-        {/* Chapter 01: Hero Stage with Parallax Portrait (`me.jpg`) & Overlays */}
-        <HeroStage 
-          onExploreClick={scrollToSearchLab}
+      <main className="relative">
+        {/* 1. True Sticky Hero Stage (Anchored at top-0, z-0) with Seamless Portrait Blending */}
+        <Hero 
           onContactClick={scrollToContact}
+          onExploreClick={scrollToAbout}
         />
 
-        {/* Chapter 02: The Search & AI Lab (AEO/GEO & Benchmarks) */}
-        <SearchAeoLab />
+        {/* 2. Sticky Curtain: Slides OVER the Hero with border-t & rounded-t-[2.5rem] */}
+        <CurtainAbout />
 
-        {/* Chapter 03: Field Notes & Curated Southeast Asia Routes */}
-        <FieldStories 
+        {/* 3. Interactive Accordion for Capabilities (01 to 04) */}
+        <CapabilitiesAccordion />
+
+        {/* 4. Vertical Sticky Stacking Cards for Featured Southeast Asia Routes */}
+        <StickyStackingRoutes 
           onSelectRoute={(route) => setSelectedRoute(route)}
         />
 
-        {/* Empathy Foundation: Hospitality Roots (STIEPAR) & Career Milestones */}
+        {/* 5. Hospitality Foundation (STIEPAR) & Career Milestones */}
         <HospitalityExperience />
 
-        {/* Visual Field Gallery: [PHOTO_SLOT_3_GALLERY_GRID] */}
-        <FieldGallery />
-
-        {/* Chapter 04: Direct Dialogue & Async Project Inquiry */}
-        <ContactDialogue />
+        {/* 6. Contact Dialogue & Asynchronous Inquiry */}
+        <ContactSection />
       </main>
 
       {/* Footer */}

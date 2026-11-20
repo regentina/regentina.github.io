@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #FFFDF7;
+    color: #1E1B4B;
+    overflow-x: hidden;
+  }
+}
+
+/* Playful Sticker Effects */
+.sticker-card {
+  border: 2px solid #1E1B4B;
+  box-shadow: 4px 4px 0px 0px #1E1B4B;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sticker-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #1E1B4B;
+}
+
+.sticker-pill {
+  border: 1.5px solid #1E1B4B;
+  box-shadow: 2px 2px 0px 0px #1E1B4B;
+}
+
+.sticker-btn {
+  border: 2px solid #1E1B4B;
+  box-shadow: 3px 3px 0px 0px #1E1B4B;
+  transition: all 0.15s ease;
+}
+
+.sticker-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px 0px #1E1B4B;
+}
+
+.sticker-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px 0px #1E1B4B;
+}
+
+/* Custom Hide Scrollbar for Horizontal Drag */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

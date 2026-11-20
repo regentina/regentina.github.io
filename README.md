@@ -1,71 +1,74 @@
-# Rory Regentina — Personal Portfolio & Modern Search Showcase
-> **Senior SEO Strategist (SEO, AEO & GEO), AI Content Strategist & Travel Storyteller**  
+# Rory Regentina 👋 — Personal Website
+> **Senior SEO & GEO Strategist, AI Content Architect & Level 7 LocallyTrip Storyteller**  
 > Live at: [https://regentina.github.io](https://regentina.github.io)
 
-A vibrant, energetic, high-craft personal portfolio web application blending strategic search authority with authentic Southeast Asian travel storytelling and a warm hospitality-first mindset.
+A vibrant, joyful, highly animated personal website built from scratch with **React 19, TypeScript, Tailwind CSS, and Framer Motion**, deployed via **Vite + GitHub Actions** to GitHub Pages.
 
 ---
 
-## 🎨 Design & Aesthetic Highlights
-- **Vibrant & Sunlit Palette:** Warm, sunlit off-white surfaces (`#FFFDF9`) paired with rich tropical turquoise (`#06B6D4`), sunlit amber (`#F59E0B`), coral pink (`#F43F5E`), and emerald lime (`#10B981`).
-- **High-Contrast Readability:** Dark ink typography (`#0F172A`) ensuring effortless readability and WCAG AA contrast compliance (`>= 4.5:1`).
-- **Modern Search Readiness (SEO, AEO & GEO):**
-  - Fully articulated `Schema.org` JSON-LD structured data for `Person` and `WebSite`.
-  - Semantic `H1`–`H3` hierarchy and meta tags for Google AI Overviews, Perplexity, and ChatGPT search citations.
-- **Interactive Features:**
-  - 🟢 **Live UTC+7 Clock:** Real-time Indonesia (Jakarta) time indicator for worldwide asynchronous collaboration.
-  - 📊 **Animated Stat Counters:** Metrics ticker displaying 5+ years experience, 100/100 PageSpeed scores, -35% AI drafting velocity, and Level 7 LocallyTrip XP (5,425 XP).
-  - 🤖 **AEO Citation Simulator:** Interactive preview comparing Perplexity Pro, ChatGPT Search, and Google AI Overviews.
-  - 🗺️ **Travel Route Reader Modal:** Interactive field notes for 6 Southeast Asian itineraries (Hanoi, Bandung, Bali, Bangkok, Penang).
-  - 💬 **Async Project Inquiry Builder:** Generates ready-to-send briefs directly for WhatsApp (`+62 811-2283-3696`) and Email (`rygentina@gmail.com`).
+## 🎨 Personal Vibe & Design Direction
+- **No Stiff Corporate Layouts:** Written in Rory's genuine first-person voice ("Hi, I'm Rory 👋", "My Dual World", "Field notes from Bandung to Southeast Asia").
+- **Bright, Playful Color Palette:**
+  - **Canvas Cream:** `#FFFDF7` (sunlit warm surface)
+  - **Electric Coral:** `#FF5A5F`
+  - **Tropical Turquoise:** `#00B4D8`
+  - **Marigold Yellow:** `#FFB703`
+  - **Mint Green:** `#06D6A0`
+  - **Deep Ink:** `#1E1B4B` (ultra crisp contrast typography)
+- **Real-World Tactile Motion (Framer Motion):**
+  - Kinetic spring-physics headline reveal with rotating role pill.
+  - Interactive polaroid card with 3D mouse parallax tilt and draggable stickers (`100/100 PageSpeed`, `LV 7 • 5425 XP`, `UTC+7 Async`).
+  - Asymmetric Bento Grid comparing modern AEO/GEO vs old-school SEO.
+  - Interactive horizontal drag carousel for 6 Southeast Asia field routes with detailed modal.
+  - Interactive quick ping generator with 1-click clipboard copy + confetti explosion!
 
 ---
 
-## 📸 Personal Photo Slots (How to Upload Your Photos)
-
-We've prepared dedicated, perfectly framed photo slots with high-visibility placeholders:
-
-| Photo Slot | Location | Recommended File | Dimensions / Aspect Ratio |
-| :--- | :--- | :--- | :--- |
-| **`[PHOTO_SLOT_1_HERO_PORTRAIT]`** | Hero / About section | `assets/images/hero-portrait.jpg` | ~4:5 (e.g., 800×1000px) |
-| **`[PHOTO_SLOT_2_FIELD_STORYTELLING]`** | Travel & Hospitality showcase | `assets/images/field-storytelling.jpg` | ~16:10 or 16:9 (e.g., 1200×750px) |
-| **`[PHOTO_SLOT_3A_FIELD_RESEARCH]`** | Gallery Slot 3A (Southeast Asia) | `assets/images/gallery-1.jpg` | ~4:5 (e.g., 600×700px) |
-| **`[PHOTO_SLOT_3B_AI_OPERATIONS]`** | Gallery Slot 3B (Deep Work Setup) | `assets/images/gallery-2.jpg` | ~4:5 (e.g., 600×700px) |
-| **`[PHOTO_SLOT_3C_HOSPITALITY_ROOTS]`** | Gallery Slot 3C (Hospitality / STIEPAR) | `assets/images/gallery-3.jpg` | ~4:5 (e.g., 600×700px) |
-
-### How to update in `index.html`:
-Simply replace the placeholder paths (e.g., `assets/images/hero-portrait-placeholder.svg`) with your uploaded JPG/PNG images in `index.html`.
+## 🛠️ Tech Stack & Architecture
+- **Framework:** React 19 + TypeScript
+- **Styling:** Tailwind CSS + PostCSS + Autoprefixer
+- **Motion:** Framer Motion (respects `prefers-reduced-motion`)
+- **Icons:** Lucide React
+- **Confetti:** Canvas Confetti
+- **Build & Bundler:** Vite 6
+- **CI/CD:** Automated GitHub Actions (`.github/workflows/deploy.yml`)
 
 ---
 
-## 🚀 Local Development & Preview
+## 📸 Personal Photo Slots
 
-You can open `index.html` directly in any web browser, or run a local lightweight server:
+| Slot | File Path | Status |
+| :--- | :--- | :--- |
+| **`[PHOTO_SLOT_1_HERO_PORTRAIT]`** | `/assets/me.jpg` | ✅ Active (Rory's personal portrait) |
+| **`[PHOTO_SLOT_2_FIELD_STORYTELLING]`** | `/public/assets/images/field-storytelling-placeholder.svg` | Ready to swap with field photo |
+| **`[PHOTO_SLOT_3A_FIELD_RESEARCH]`** | `/public/assets/images/gallery-photo-1.svg` | Ready to swap in gallery |
+| **`[PHOTO_SLOT_3B_AI_OPERATIONS]`** | `/public/assets/images/gallery-photo-2.svg` | Ready to swap in gallery |
+| **`[PHOTO_SLOT_3C_HOSPITALITY_ROOTS]`** | `/public/assets/images/gallery-photo-3.svg` | Ready to swap in gallery |
+
+---
+
+## 💻 Local Development
 
 ```bash
-# Using Python 3:
-python3 -m http.server 3000
-# Then open: http://localhost:3000
+# Install dependencies
+npm install
 
-# Or using npx serve:
-npx serve .
+# Start local Vite development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build locally
+npm run preview
 ```
 
 ---
 
-## 🌐 Deploying to GitHub Pages
+## 🚀 Deployment (GitHub Actions to GitHub Pages)
 
-1. Add and commit all files:
-   ```bash
-   git add .
-   git commit -m "Initial launch: Rory Regentina vibrant portfolio web application"
-   ```
-2. Push to GitHub:
-   ```bash
-   git push -u origin main
-   ```
-3. In your GitHub repository settings:
-   - Go to **Settings** > **Pages**.
-   - Under **Build and deployment**, ensure **Source** is set to **Deploy from a branch**.
-   - Select branch: `main` and folder: `/ (root)`.
-   - Your site will be published at `https://regentina.github.io/`!
+Pushing commits to the `main` branch automatically triggers `.github/workflows/deploy.yml`:
+1. Checks out repository.
+2. Installs dependencies (`npm ci`).
+3. Runs `npm run build` (TypeScript check + Vite build).
+4. Deploys the `./dist` folder directly to GitHub Pages.

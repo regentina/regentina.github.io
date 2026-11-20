@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="100%" height="100%">
+  <defs>
+    <linearGradient id="travelSky" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF7ED"/>
+      <stop offset="30%" stop-color="#FED7AA"/>
+      <stop offset="70%" stop-color="#BAE6FD"/>
+      <stop offset="100%" stop-color="#99F6E4"/>
+    </linearGradient>
+    <linearGradient id="terraceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#064E3B"/>
+    </linearGradient>
+    <linearGradient id="mountainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0C4A6E"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#0F172A" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Sky Canvas -->
+  <rect width="1200" height="750" rx="32" fill="url(#travelSky)"/>
+
+  <!-- Sun & Horizon -->
+  <circle cx="920" cy="240" r="130" fill="#F97316" opacity="0.3"/>
+  <circle cx="920" cy="240" r="90" fill="#FB923C" opacity="0.6"/>
+
+  <!-- Distant Mountains (Halong Bay / Bandung Highlands silhouette) -->
+  <path d="M 0 540 Q 200 360 420 540 Q 600 320 840 520 Q 1020 380 1200 500 L 1200 750 L 0 750 Z" fill="url(#mountainGrad)" opacity="0.65"/>
+  <!-- Rice Terraces & Tea Plantation slopes -->
+  <path d="M 0 580 Q 280 460 620 590 Q 940 450 1200 570 L 1200 750 L 0 750 Z" fill="url(#terraceGrad)" opacity="0.95"/>
+
+  <!-- Storyteller Waypoint Pin & Compass Details -->
+  <g transform="translate(600, 360)" filter="url(#cardShadow)">
+    <circle cx="0" cy="0" r="42" fill="#FFFFFF"/>
+    <circle cx="0" cy="0" r="32" fill="#EF4444"/>
+    <circle cx="0" cy="0" r="14" fill="#FFFFFF"/>
+    <path d="M 0 42 L 0 72" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Stamp Tags & Destinations -->
+  <g transform="translate(60, 60)">
+    <rect width="360" height="48" rx="24" fill="#0F172A" fill-opacity="0.85"/>
+    <text x="180" y="30" fill="#38BDF8" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" text-anchor="middle">
+      📍 SOUTHEAST ASIA STORYTELLING ROUTE
+    </text>
+  </g>
+
+  <!-- Editorial Info Plate -->
+  <g transform="translate(200, 560)" filter="url(#cardShadow)">
+    <rect width="800" height="135" rx="20" fill="#0F172A" fill-opacity="0.92" stroke="#38BDF8" stroke-width="2"/>
+    <text x="400" y="40" fill="#38BDF8" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="800" text-anchor="middle" letter-spacing="2">
+      [PHOTO_SLOT_2_FIELD_STORYTELLING]
+    </text>
+    <text x="400" y="74" fill="#FFFFFF" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" text-anchor="middle">
+      Bandung • Bali • Hanoi • Bangkok • Penang
+    </text>
+    <text x="400" y="106" fill="#CBD5E1" font-family="system-ui, -apple-system, sans-serif" font-size="14" text-anchor="middle">
+      TODO: Replace with your field photography in assets/images/field-storytelling.jpg
+    </text>
+  </g>
+</svg>

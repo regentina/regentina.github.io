@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowUpRight } from 'lucide-react';
-import { RouteCard } from '../data/portfolioData';
+import { PORTFOLIO_DATA, RouteCard } from '../data/portfolioData';
 
 interface RouteModalProps {
   route: RouteCard | null;
@@ -85,7 +85,7 @@ export const RouteModal: React.FC<RouteModalProps> = ({ route, onClose }) => {
           <div className="pt-6 border-t border-white/10 flex items-center justify-between gap-4 flex-wrap">
             <span className="text-xs font-mono text-zinc-500">LocallyTrip Verified Itinerary</span>
             <a
-              href="https://locallytrip.com"
+              href={PORTFOLIO_DATA.profile.links.locallytrip}
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-2.5 bg-white text-black rounded-full font-mono text-xs uppercase tracking-widest hover:bg-[#E5D5C5] transition-colors flex items-center gap-1.5"

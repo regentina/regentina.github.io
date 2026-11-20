@@ -32,9 +32,9 @@ export const PORTFOLIO_DATA = {
     phone: "+62 811-2283-3696",
     whatsappLink: "https://wa.me/6281122833696",
     links: {
-      linkedin: "https://www.linkedin.com",
-      upwork: "https://www.upwork.com",
-      locallytrip: "https://locallytrip.com"
+      linkedin: "https://www.linkedin.com/in/regentina",
+      upwork: "https://www.upwork.com/freelancers/regentina",
+      locallytrip: "https://locallytrip.com/en/users/regentina"
     }
   },
 
